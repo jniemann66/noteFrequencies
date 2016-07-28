@@ -79,7 +79,7 @@ class NoteFrequencyTable extends Component {
     // Populate Rows with Note Name, followed by note frequencies for each octave:
     for (var pitch=0; pitch < pitchClasses.length; ++pitch ){
       var rowData = [];
-      rowData.push(<td className="tbl-pitchname" key={1024+pitch}>{pitchClasses[pitch]}</td>) // Name of Note
+      rowData.push(<td className="tbl-pitchname" key={1024+pitch}>{pitchClasses[pitch]}</td>); // Name of Note
       for (var octave=0; octave < numOctaves; ++octave){
           var freq = calcFrequency(
             base, 
