@@ -32,7 +32,7 @@ class App extends Component {
 }
 
 class NoteFrequencyTable extends Component {
-	render() {
+  render() {
     const numOctaves=10;
     var base = this.props.baseFreq;
     
@@ -90,7 +90,7 @@ class NoteFrequencyTable extends Component {
       Rows.push(<tr key={"row-"+pitch}>{rowData}</tr>);
     }
     
-		return (
+    return (
       <div>
         <br />
         <table className="tbl">
@@ -103,8 +103,8 @@ class NoteFrequencyTable extends Component {
           </tbody>
         </table>
       </div>
-		);
-	}
+    );
+  }
 }
 
 function calcFrequency(base,pitch,octave){
