@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #222;
+  height: 80px;
+  padding: 20px;
+  color: white;
+}
+
+.App-copyright {
+  font-size: large;
+}
+
+.tbl {margin:auto; border-collapse:collapse;border-spacing:0;}
+.tbl td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+.tbl th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+
+.tbl .tbl-pitchlabel{background-color:#3166ff;color:#ffffff}
+.tbl .tbl-octavelabel{background-color:#34696d;color:#ffffff}
+.tbl .tbl-pitchname{background-color:#bbdaff}
+.tbl .tbl-frequency{background-color:#e1edde}
