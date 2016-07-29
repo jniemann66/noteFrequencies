@@ -2,6 +2,10 @@
 
 Display the frequencies of musical notes, and see the effects of adjusting the tuning in realtime.
 
+
+----------
+
+
 ![Screenshot](https://github.com/jniemann66/noteFrequencies/blob/master/Screenshot.PNG)
 
 it was written using [React](https://facebook.github.io/react/ "React")
