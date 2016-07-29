@@ -6,7 +6,7 @@ Display the frequencies of musical notes, and see the effects of adjusting the t
 ----------
 
 
-![Screenshot](https://github.com/jniemann66/noteFrequencies/blob/master/Screenshot-desktop.png)
+![Screenshot](https://github.com/jniemann66/noteFrequencies/blob/master/Screenshot-desktop.PNG)
 
 it was written using [React](https://facebook.github.io/react/ "React")
 
