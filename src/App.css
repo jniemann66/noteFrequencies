@@ -17,7 +17,8 @@
 .tbl td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
 .tbl th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
 
-.tbl .tbl-pitchlabel{background-color:#3166ff;color:#ffffff}
-.tbl .tbl-octavelabel{background-color:#34696d;color:#ffffff}
-.tbl .tbl-pitchname{background-color:#bbdaff}
-.tbl .tbl-frequency{background-color:#e1edde}
+.tbl-pitchlabel{background-color:#3166ff;color:#ffffff}
+.tbl-octavelabel{background-color:#34696d;color:#ffffff}
+.tbl-pitchname{background-color:#bbdaff}
+.tbl-frequency{background-color:#e1edde}
+.tbl-frequency:hover{background-color:#c1ddc1}

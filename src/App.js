@@ -14,7 +14,7 @@ class App extends Component {
       baseFreq: evt.target.value
     });
   }
-  
+   
   render() {
     return (
       <div className="App">
@@ -31,7 +31,55 @@ class App extends Component {
   }
 }
 
+class Synth {
+  constructor() {
+    if(!isBrowserIE()) { // no version of IE supports WEB Audio API ; other modern browers OK
+      this.initAudio();
+      this.audioOK = true;
+    }
+  }
+    
+  initAudio() {
+    this.audio = new AudioContext();
+    this.vco = this.audio.createOscillator();
+    this.vco.type = this.vco.SINE;
+    this.vco.frequency.value = 440;
+    this.vco.start(0);
+    this.vca = this.audio.createGain();
+    this.vca.gain.value = 0;
+    this.vco.connect(this.vca);
+    this.vca.connect(this.audio.destination);
+  }
+  
+  setFrequency(f) {
+    if(this.audioOK)
+      this.vco.frequency.value = f;
+  }
+  
+  setGain(g) {
+    if(this.audioOK)
+      this.vca.gain.value = g;
+  }
+}
+
 class NoteFrequencyTable extends Component {
+  constructor(props) {
+    super(props);
+    this.synth = new Synth();
+  }
+  
+   handleMouseDown(evt) {
+    this.synth.setGain(0.1);
+  }
+  
+  handleMouseUp(evt) {
+    this.synth.setGain(0);
+  }
+  
+  handleHover(evt) {
+    this.synth.setFrequency(evt.target.textContent);
+  }
+  
   render() {
     const numOctaves=10;
     var base = this.props.baseFreq;
@@ -85,13 +133,13 @@ class NoteFrequencyTable extends Component {
             base, 
             pitch-9, // 'C' is 9 semitones below 'A' 
             octave);
-          rowData.push(<td className="tbl-frequency" key={(octave*12)+pitch}>{freq.toPrecision(6)}</td>); // Frequency
+          rowData.push(<td className="tbl-frequency" key={(octave*12)+pitch}  onMouseOver={this.handleHover.bind(this)}>{freq.toPrecision(6)}</td>); // Frequency
       } 
-      Rows.push(<tr key={"row-"+pitch}>{rowData}</tr>);
+      Rows.push(<tr key={"row-"+pitch} >{rowData}</tr>);
     }
     
     return (
-      <div>
+      <div onMouseDown={this.handleMouseDown.bind(this)} onMouseUp={this.handleMouseUp.bind(this)}>
         <br />
         <table className="tbl">
           <thead>
@@ -113,6 +161,20 @@ function calcFrequency(base,pitch,octave){
   // freq = baseFreq * 2 ^ (intervalInSemitones / 12 )
   
   return base * Math.pow(2, (octave-4) + (pitch / 12.0)); // center around octave == 4, pitch == 0 
+}
+
+function isBrowserIE() {
+  var ua = window.navigator.userAgent;
+  var rv = false; 
+ 
+  if (ua.indexOf('MSIE ') > 0) { // IE 10 or older 
+    rv = true;
+  }
+
+  if (ua.indexOf('Trident/') > 0) { // IE 11
+    rv = true;
+  }
+  return rv;
 }
 
 export default App;
