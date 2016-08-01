@@ -1,7 +1,7 @@
 # Note Frequencies
 
 Display the frequencies of musical notes, and see the effects of adjusting the tuning in realtime.
-
+You can also click on the Note Frequencies to hear them (provided your browser supports the Web audio API; IE doesn't, but most others do !)
 
 ----------
 
