@@ -84,8 +84,7 @@ class NoteFrequencyTable extends Component {
     const numOctaves=10;
     var base = this.props.baseFreq;
     
-    /* 
-    // for browsers that cannot display unicode sharps and flats:
+    /* // for browsers that cannot display unicode sharps and flats:
     const sharpSymbol = '#';
     const flatSymbol = 'b'; 
     */
