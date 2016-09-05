@@ -24,6 +24,7 @@ class App extends Component {
         <br />
         Fine Tuning: <input type="Range" min="430" max="450" value={this.state.baseFreq} onChange={this.handleValuesChange.bind(this)} />
         <p>{"A4 = " + this.state.baseFreq + " Hz"}</p>
+        <p><i>tip: you can click on the frequencies to hear them ! (right mouse-button recommended)</i></p>
         <NoteFrequencyTable baseFreq={this.state.baseFreq} />
         <p className="App-copyright">© 2016 - Judd Niemann</p>
       </div>
